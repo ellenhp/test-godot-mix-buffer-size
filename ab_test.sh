@@ -1,7 +1,9 @@
 
 echo "changing the project to use either $2 or $3 for mix_buffer_size, then launching $1."
 
-if [ `expr $RANDOM % 2` -eq 0 ]
+R=$RANDOM
+
+if [ `expr $R % 2` -eq 0 ]
 then
   sed "s/mix_buffer_size.*/mix_buffer_size=$2/" project.godot > new_project.godot
 else
